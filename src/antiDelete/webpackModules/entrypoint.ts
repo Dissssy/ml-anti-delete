@@ -88,6 +88,9 @@ Dispatcher.addInterceptor((event) => {
             logger.info(`Message was sent by the current user, allowing deletion: ${event.id}`);
             return;
         }
+        if (message.content == new_message.content) {
+            return;
+        }
         // get the diff between the original message and the updated message
         let diff = Diff.diffChars(message.content, new_message.content);
         // logger.info(`Diff: ${JSON.stringify(diff)}`);
