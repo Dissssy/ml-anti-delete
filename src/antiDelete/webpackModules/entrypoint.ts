@@ -31,7 +31,7 @@ Dispatcher.addInterceptor((event) => {
             type: "MESSAGE_UPDATE",
             message: message,
             p51devs_antiDelete: true
-        };  
+        };
 
         logger.trace(`Dispatching new event: ${JSON.stringify(newEvent)}`);
         Dispatcher.dispatch(newEvent);
