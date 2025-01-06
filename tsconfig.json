@@ -7,7 +7,9 @@
     "strict": true,
     "skipLibCheck": true,
     "moduleResolution": "bundler",
-    "jsx": "react"
+    "jsx": "react",
+    "allowJs": true,
+    "checkJs": false
   },
   "include": ["./src/**/*", "./env.d.ts"]
 }
