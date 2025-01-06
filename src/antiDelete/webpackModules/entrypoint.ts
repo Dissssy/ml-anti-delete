@@ -13,7 +13,7 @@ Dispatcher.addInterceptor((event) => {
     
     if (event.type == "MESSAGE_DELETE") {   
         logger.info(`Message deleted: ${JSON.stringify(event)}`);
-        var message = MessageStore.getMessage(event.channelId, event.id);
+        let message = MessageStore.getMessage(event.channelId, event.id);
         if (!message) {
             logger.warn(`Message not found in cache: ${event.id}`);
             return true; // still want to ignore this event, just wont be all fancy pants, maybe we can manually inject some color changing text or something?
