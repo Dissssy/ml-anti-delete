@@ -1,0 +1,13 @@
+{
+  "$schema": "https://moonlight-mod.github.io/manifest.schema.json",
+  "id": "antiDelete",
+  "version": "1.0.0",
+  "apiLevel": 2,
+  "meta": {
+    "name": "Anti Delete",
+    "tagline": "Prevent messages from being deleted",
+    "description": "Does what it says on the tin",
+    "authors": ["Dissy"],
+    "source": "https://github.com/Dissssy/anti-delete"
+  }
+}
