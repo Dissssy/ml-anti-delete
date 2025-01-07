@@ -1,6 +1,7 @@
 import spacepack from "@moonlight-mod/wp/spacepack_spacepack";
-import Dispatcher from "@moonlight-mod/wp/discord/Dispatcher";
 import { MessageStore, UserStore, ChannelStore } from "@moonlight-mod/wp/common_stores"
+
+const cfg = <T>(key: string) => moonlight.getConfigOption<T>("messageSignatures", key);
 
 const logger = moonlight.getLogger("messageSignatures/entrypoint");
 logger.info("Loading messageSignatures module");
@@ -23,8 +24,8 @@ module.Z.sendMessage = async (...args: any[]) => {
 
     logger.trace("got sendMessage", args[1]);
     const channel = ChannelStore.getChannel(args[0]);
-    const filterList: [string] = moonlight.getConfigOption("messageSignatures", "filterList") ?? ["0"];
-    const whitelist = moonlight.getConfigOption("messageSignatures", "filterType") ?? false;
+    const filterList = cfg<[string]>("filterList") ?? [];
+    const whitelist = cfg<boolean>("filterType") ?? false;
     let message = args[1];
     let inList = false;
     let ignore = false;
@@ -36,7 +37,7 @@ module.Z.sendMessage = async (...args: any[]) => {
             case 0:
                 if (channel.guild_id) {
                     logger.trace("Guild channel");
-                    const sendInGuilds = moonlight.getConfigOption("messageSignatures", "sendInGuilds")??true;
+                    const sendInGuilds = cfg<boolean>("sendInGuilds") ?? true;
                     logger.trace("sendInGuilds", sendInGuilds);
                     if (sendInGuilds) {
                         // check if the guild_id is in the filterList
@@ -53,7 +54,7 @@ module.Z.sendMessage = async (...args: any[]) => {
                 break;
             case 1:
                 logger.trace("Private DM");
-                const sendInDMs = moonlight.getConfigOption("messageSignatures", "sendInDMs") ?? true;
+                const sendInDMs = cfg<boolean>("sendInDMs") ?? true;
                 logger.trace("sendInDMs", sendInDMs);
                 if (sendInDMs) {
                     inList = filterList.some((userId: string) => {
@@ -65,7 +66,7 @@ module.Z.sendMessage = async (...args: any[]) => {
                 break;
             case 3:
                 logger.trace("Group DM");
-                const sendInGroupDMs = moonlight.getConfigOption("messageSignatures", "sendInGroupDMs") ?? true;
+                const sendInGroupDMs = cfg<boolean>("sendInGroupDMs") ?? true;
                 logger.trace("sendInGroupDMs", sendInGroupDMs);
                 if (sendInGroupDMs) {
                     inList = filterList.some((userId: string) => {
@@ -90,7 +91,7 @@ module.Z.sendMessage = async (...args: any[]) => {
     if ((!inList) && (!ignore)) {
         logger.trace("Message is in filterList, adding signature");
         message.content += "\n";
-        message.content += moonlight.getConfigOption("messageSignatures", "signature") ?? "-# Sent from my Samsung Smart Fridge";
+        message.content += cfg<string>("signature") ?? "-# Sent from my Samsung Smart Fridge";
         message.content.trim();
         args[1] = message;
         return originalSend.call(module.Z, ...args);
