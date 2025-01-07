@@ -1,6 +1,6 @@
 {
-  "name": "anti-delete",
-  "version": "1.0.2",
+  "name": "p51-moonlight-exts",
+  "version": "1.0.3",
   "private": true,
   "scripts": {
     "build": "node build.mjs",

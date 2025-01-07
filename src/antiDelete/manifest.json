@@ -8,6 +8,6 @@
     "tagline": "Prevent messages from being deleted",
     "description": "Does what it says on the tin",
     "authors": ["Dissy"],
-    "source": "https://github.com/Dissssy/ml-anti-delete"
+    "source": "https://github.com/Dissssy/p51-moonlight-exts/tree/master/src/antiDelete"
   }
 }

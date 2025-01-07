@@ -1,0 +1,51 @@
+{
+  "$schema": "https://moonlight-mod.github.io/manifest.schema.json",
+  "id": "messageSignatures",
+  "version": "1.0.0",
+  "apiLevel": 2,
+  "meta": {
+    "name": "Message Signatures",
+    "tagline": "Sign your messages",
+    "description": "Automatically adds a signature (like in old forum posts and emails) to your messages.\nDoes not add it again if the last message in the chat was also yours.",
+    "authors": ["Dissy"],
+    "source": "https://github.com/Dissssy/p51-moonlight-exts/tree/master/src/messageSignatures"
+  },
+  "settings": {
+    "signature": {
+      "type": "multilinestring",
+      "displayName": "Signature",
+      "description": "The signature to add to your messages",
+      "default": "-# Sent from my Samsung Smart Fridge"
+    },
+    "filterList": {
+      "type": "list",
+      "displayName": "Filter list",
+      "description": "List of guild/channel/user IDs to either black or whitelist for adding a signature when sending a message, will be checked in that order.",
+      "default": []
+    },
+    "filterType": {
+      "type": "boolean",
+      "displayName": "Whitelist",
+      "description": "Change the list to be a whitelist instead of a blacklist",
+      "default": false
+    },
+    "sendInGuilds": {
+      "type": "boolean",
+      "displayName": "Send in guilds",
+      "description": "Whether to add a signature when sending a message in a guild",
+      "default": true
+    },
+    "sendInGroups": {
+      "type": "boolean",
+      "displayName": "Send in groups",
+      "description": "Whether to add a signature when sending a message in a group chat",
+      "default": true
+    },
+    "sendInDMs": {
+      "type": "boolean",
+      "displayName": "Send in private messages",
+      "description": "Whether to add a signature when sending a message in a private chat",
+      "default": true
+    }
+  }
+}
