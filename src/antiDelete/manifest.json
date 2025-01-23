@@ -1,7 +1,7 @@
 {
   "$schema": "https://moonlight-mod.github.io/manifest.schema.json",
   "id": "antiDelete",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "apiLevel": 2,
   "meta": {
     "name": "Anti Delete",
@@ -10,7 +10,7 @@
     "authors": ["Dissy"],
     "source": "https://github.com/Dissssy/p51-moonlight-exts/tree/master/src/antiDelete",
     "donate": "https://ko-fi.com/p51_dissy",
-    "changelog": "Added options, including for filtering users, channels, and guilds in or out of the plugin functionality."
+    "changelog": "you'll never believe what I did"
   },
   "settings": {
     "features": {
