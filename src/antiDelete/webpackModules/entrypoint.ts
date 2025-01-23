@@ -103,7 +103,7 @@ Dispatcher.addInterceptor((event) => {
             return;
         }
         // get the diff between the original message and the updated message
-        let diff = Diff.diffChars(message.content, new_message.content);
+        let diff = Diff.diffWords(message.content, new_message.content);
         // logger.info(`Diff: ${JSON.stringify(diff)}`);
         // let edit_num = 1;
         // if (message.embeds.length > 0) {
@@ -119,6 +119,9 @@ Dispatcher.addInterceptor((event) => {
         let last_was_colored = false;
         diff.forEach((part: Part) => {
             let color = part.added ? colors.added : part.removed ? colors.removed : colors.reset;
+            if (last_was_colored && part.added) {
+                diff_str += " ";
+            }
             diff_str += color + part.value + colors.reset;
             last_was_colored = part.added || part.removed;
         });
