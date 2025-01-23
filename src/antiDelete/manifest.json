@@ -1,13 +1,75 @@
 {
   "$schema": "https://moonlight-mod.github.io/manifest.schema.json",
   "id": "antiDelete",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "apiLevel": 2,
   "meta": {
     "name": "Anti Delete",
     "tagline": "Prevent messages from being deleted",
     "description": "Does what it says on the tin",
     "authors": ["Dissy"],
-    "source": "https://github.com/Dissssy/p51-moonlight-exts/tree/master/src/antiDelete"
+    "source": "https://github.com/Dissssy/p51-moonlight-exts/tree/master/src/antiDelete",
+    "donate": "https://ko-fi.com/dissy",
+    "changelog": "Added options, including for filtering users, channels, and guilds in or out of the plugin functionality."
+  },
+  "settings": {
+    "features": {
+      "type": "select",
+      "default": "Both",
+      "displayName": "Features",
+      "description": "Choose which features to enable",
+      "options": [
+        "Both",
+        "Anti Delete Only",
+        "Anti Edit Only"
+      ]
+    },
+    "locations": {
+      "type": "select",
+      "default": "Both",
+      "displayName": "Locations",
+      "description": "Choose which locations the plugin will be active in",
+      "options": [
+        "Both",
+        "Guilds Only",
+        "DMs Only"
+      ]
+    },
+    "guildFilter": {
+      "type": "list",
+      "default": [],
+      "displayName": "Guild ID Filter",
+      "description": "Disallow the plugin from working in these guilds, use Invert Guild Filter to allow only these guilds."
+    },
+    "invertGuildFilter": {
+      "type": "boolean",
+      "default": false,
+      "displayName": "Invert Guild Filter",
+      "description": "Invert the guild filter, only allowing the plugin to work in the guilds specified in Guild ID Filter."
+    },
+    "channelFilter": {
+      "type": "list",
+      "default": [],
+      "displayName": "Channel ID Filter",
+      "description": "Disallow the plugin from working in these channels, use Invert Channel Filter to allow only these channels."
+    },
+    "invertChannelFilter": {
+      "type": "boolean",
+      "default": false,
+      "displayName": "Invert Channel Filter",
+      "description": "Invert the channel filter, only allowing the plugin to work in the channels specified in Channel ID Filter."
+    },
+    "userFilter": {
+      "type": "list",
+      "default": [],
+      "displayName": "User ID Filter",
+      "description": "Disallow the plugin from working for these users, use Invert User Filter to allow only these users."
+    },
+    "invertUserFilter": {
+      "type": "boolean",
+      "default": false,
+      "displayName": "Invert User Filter",
+      "description": "Invert the user filter, only allowing the plugin to work for the users specified in User ID Filter."
+    }
   }
 }

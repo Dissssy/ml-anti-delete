@@ -8,6 +8,7 @@
     "tagline": "See through the window!",
     "description": "Allows css to style the window with transparency.",
     "authors": ["Dissy"],
-    "source": "https://github.com/Dissssy/p51-moonlight-exts/tree/master/src/transparentWindow"
+    "source": "https://github.com/Dissssy/p51-moonlight-exts/tree/master/src/transparentWindow",
+    "donate": "https://ko-fi.com/dissy"
   }
 }

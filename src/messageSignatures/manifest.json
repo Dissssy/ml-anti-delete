@@ -8,7 +8,8 @@
     "tagline": "Sign your messages",
     "description": "Automatically adds a signature (like in old forum posts and emails) to your messages.\nDoes not add it again if the last message in the chat was also yours.",
     "authors": ["Dissy"],
-    "source": "https://github.com/Dissssy/p51-moonlight-exts/tree/master/src/messageSignatures"
+    "source": "https://github.com/Dissssy/p51-moonlight-exts/tree/master/src/messageSignatures",
+    "donate": "https://ko-fi.com/dissy"
   },
   "settings": {
     "signature": {
