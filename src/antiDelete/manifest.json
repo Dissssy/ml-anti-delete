@@ -9,7 +9,7 @@
     "description": "Does what it says on the tin",
     "authors": ["Dissy"],
     "source": "https://github.com/Dissssy/p51-moonlight-exts/tree/master/src/antiDelete",
-    "donate": "https://ko-fi.com/dissy",
+    "donate": "https://ko-fi.com/p51_dissy",
     "changelog": "Added options, including for filtering users, channels, and guilds in or out of the plugin functionality."
   },
   "settings": {
